@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Love You Anshu ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+        overflow: hidden;
+        font-family: 'Segoe UI', cursive;
+        text-align: center;
+        color: #b3003b;
+    }
+
+    .container {
+        position: relative;
+        top: 25%;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .love-btn {
+        padding: 15px 35px;
+        font-size: 1.4em;
+        background: #ff3366;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    .love-btn:hover {
+        background: #e6004c;
+        transform: scale(1.1);
+    }
+
+    .letter {
+        display: none;
+        background: rgba(255,255,255,0.9);
+        color: #800020;
+        padding: 25px;
+        margin: 30px auto;
+        max-width: 700px;
+        border-radius: 20px;
+        font-size: 1.2em;
+        line-height: 1.6;
+        animation: fadeIn 1.5s;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+        font-size: 3em;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+    }
+
+    /* Flower shower */
+    .flower {
+        position: absolute;
+        top: -50px;
+        font-size: 24px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🌹 Happy Rose Day 🌹</h1>
+    <h2>Anshu ❤️ (My Kaju Katli)</h2>
+
+    <button class="love-btn" onclick="showLetter()">I Love You Anshu</button>
+
+    <div class="letter" id="loveLetter">
+        <p><strong>My Kaju Katli,</strong></p>
+
+        <p>
+            From the moment you came into my life,  
+            everything started feeling more beautiful, more meaningful.
+            You are my happiness, my peace, and my biggest blessing.
+        </p>
+
+        <p>
+            Just like a rose, you make my world colorful and fragrant.
+            I don’t just see you as my girlfriend —  
+            I see you as my **future wife**, my forever partner,
+            the person I want to grow old with.
+        </p>
+
+        <p>
+            On this Rose Day and every Valentine’s Day,
+            I promise to stand by you, love you endlessly,
+            and choose you every single day.
+        </p>
+
+        <p>
+            Always yours,<br>
+            ❤️
+        </p>
+
+        <div class="heart">❤️</div>
+    </div>
+</div>
+
+<script>
+    function showLetter() {
+        document.getElementById("loveLetter").style.display = "block";
+    }
+
+    const flowers = ["🌹","🌸","🌺","🌷","💐"];
+
+    function createFlower() {
+        const flower = document.createElement("div");
+        flower.className = "flower";
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+        flower.style.fontSize = (20 + Math.random() * 20) + "px";
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 8000);
+    }
+
+    setInterval(createFlower, 300);
+</script>
+
+</body>
+</html>
